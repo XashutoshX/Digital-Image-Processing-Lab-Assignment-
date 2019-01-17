@@ -56,4 +56,7 @@ for i = 1:512
     end
 end
   
- imshow(uint8(dummy_img/12)) 
+for i =1:16
+    subplot(4,4,i)
+    imshow(uint8(dummy_img/i))
+end
