@@ -44,7 +44,7 @@ end
  
   tab = vertcat(img22,counts,p_mat,cumsum(p_mat),hv);
   z = [] ;
-  z = horzcat(img22',counts');
+  z = horzcat(img22',hv');
   dummy_img = zeros(512);
 for i = 1:512
     for j = 1:512
@@ -55,8 +55,9 @@ for i = 1:512
         end
     end
 end
-  
-for i =1:16
-    subplot(4,4,i)
-    imshow(uint8(dummy_img/i))
-end
+ imshow(rgb2gray(imread('lena_color.jpg'))); 
+ figure();
+
+
+imshow(uint8(dummy_img))
+histogram(uint8(dummy_img))
